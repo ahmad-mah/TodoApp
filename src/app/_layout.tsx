@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/theme/themeProvider';
 function RootLayout() {
   return (
     <>
-      <NavigationBar style="inverted" />
+      <NavigationBar style="inverted" hidden />
       <ThemeProvider>
         <Stack
           screenOptions={{

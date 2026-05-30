@@ -16,7 +16,7 @@ function Index() {
           borderRadius: 10,
           marginTop: 20,
         }}
-        onPress={() => setTheme(ThemeMode.DARK)}
+        onPress={() => setTheme(ThemeMode.LIGHT)}
       >
         <Text>Toggle the Theme</Text>
       </Pressable>

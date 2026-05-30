@@ -8,10 +8,12 @@ const TabsLayout = () => {
   const { colors } = useTheme();
   return (
     <Tabs
+
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor:colors.textMuted,
+
 
         tabBarStyle: {
           borderTopColor: colors.border,
