@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { ColorScheme } from './types';
 import { ThemeMode } from './mode';
 import Storage from './storage';
 import { Themes } from './themes';
+import { ColorScheme } from './types';
 
 type ThemeContextType = {
   mode: ThemeMode;
@@ -22,6 +22,7 @@ function ThemeProvider({ children }: { children: ReactNode }) {
         setThemeMode(storedMode);
       }
     };
+
     loadThemeFromStorage();
   }, []);
 

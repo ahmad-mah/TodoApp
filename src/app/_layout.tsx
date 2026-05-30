@@ -1,6 +1,6 @@
-import { Stack } from 'expo-router';
+import { ThemeProvider } from '@/theme/ThemeProvider';
 import { NavigationBar } from 'expo-navigation-bar';
-import { ThemeProvider } from '@/theme/themeProvider';
+import { Stack } from 'expo-router';
 
 function RootLayout() {
   return (
