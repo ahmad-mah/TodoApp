@@ -10,7 +10,7 @@ type ThemeContextType = {
   colors: ColorScheme;
 };
 
-const ThemeContext = createContext<ThemeContextType | null>(null);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function ThemeProvider({ children }: { children: ReactNode }) {
   const [mode, setThemeMode] = useState(ThemeMode.LIGHT);
