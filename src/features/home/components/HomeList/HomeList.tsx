@@ -13,11 +13,8 @@ const HomeList = () => {
       data={['Learn Python', 'Subscribe to Codesistnecy']}
       style={styles.list}
       ItemSeparatorComponent={<ListSeparator height={20} />}
-      renderItem={({ item }) => <HomeListItem text={item}  />}
-    >
-
-
-    </FlatList>
+      renderItem={({ item }) => <HomeListItem text={item} />}
+    ></FlatList>
   );
 };
 

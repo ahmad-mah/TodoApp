@@ -1,5 +1,5 @@
 import useTheme from '@/theme/useTheme';
-import { StyleSheet } from 'react-native';
+import { Keyboard, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeHeader from '../components/HomeHeader/HomeHeader';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
@@ -12,10 +12,12 @@ const HomeScreen = () => {
   const styles = createHomeStyles(colors);
   return (
     <SafeAreaView style={styles.container}>
-      <HomeHeader />
-      <ProgressBar />
-      <HomeInput />
-      <HomeList />
+      <Pressable onPress={Keyboard.dismiss}>
+        <HomeHeader />
+        <ProgressBar />
+        <HomeInput />
+        <HomeList />
+      </Pressable>
     </SafeAreaView>
   );
 };
