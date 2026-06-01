@@ -8,6 +8,7 @@ import HomeListItemIcon from './HomeListItemIcon';
 const HomeListItem = ({ text }: { text: string }) => {
   const { colors } = useTheme();
   const styles = createHomeListStyles(colors);
+
   return (
     <LinearGradient
       start={{ x: 0, y: 0 }}

@@ -12,7 +12,7 @@ const HomeScreen = () => {
   const styles = createHomeStyles(colors);
   return (
     <SafeAreaView style={styles.container}>
-      <Pressable onPress={Keyboard.dismiss}>
+      <Pressable onPress={Keyboard.dismiss} style={{ flex: 1 }}>
         <HomeHeader />
         <ProgressBar />
         <HomeInput />

@@ -33,8 +33,11 @@ const createHomeInputStyles = (colors: ColorScheme) =>
       fontSize: 20,
       color: colors.text,
     },
-    buttonDisabled: {},
-    buttonDisabledIcon: {},
+  
+    buttonDisabledIcon: {
+      fontSize: 20,
+      color: colors.textMuted,
+    },
   });
 
 export default createHomeInputStyles;

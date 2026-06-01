@@ -1,13 +1,9 @@
 import { ThemeProvider } from '@/theme/ThemeProvider';
 import { NavigationBar } from 'expo-navigation-bar';
 import { Stack } from 'expo-router';
-import {ConvexProvider,ConvexReactClient} from 'convex/react';
+import { ConvexProvider, ConvexReactClient } from 'convex/react';
 
-
-
-const convex = new ConvexReactClient(
-  process.env.EXPO_PUBLIC_CONVEX_URL!
-);
+const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!);
 
 function RootLayout() {
   return (

@@ -9,6 +9,7 @@ const createHomeListStyles = (colors: ColorScheme) =>
     listItem: {
       flexDirection: 'row',
       alignItems: 'flex-start',
+
       gap: 20,
       padding: 20,
       borderRadius: 16,
@@ -39,16 +40,24 @@ const createHomeListStyles = (colors: ColorScheme) =>
       alignItems: 'center',
     },
     listItemContent: {
+      flexShrink: 1,
       gap: 20,
     },
     listItemText: {
       fontSize: 17,
       color: colors.text,
       fontWeight: '500',
+      lineHeight: 24,
     },
     listItemContentAction: {
       flexDirection: 'row',
+
       gap: 12,
+    },
+    loadingContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   });
 
