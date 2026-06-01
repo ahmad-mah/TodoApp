@@ -1,15 +1,25 @@
+import { useFonts } from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 import { ThemeProvider } from '@/theme/ThemeProvider';
+import { ConvexProvider, ConvexReactClient } from 'convex/react';
 import { NavigationBar } from 'expo-navigation-bar';
 import { Stack } from 'expo-router';
-import { ConvexProvider, ConvexReactClient } from 'convex/react';
 
 const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!);
 
 function RootLayout() {
+  const [loaded] = useFonts({
+    ...Ionicons.font,
+  });
+
+  if (!loaded) {
+    return null; // or splash screen
+  }
+
   return (
-    <ConvexProvider client={convex}>
-      <NavigationBar style="inverted" hidden />
-      <ThemeProvider>
+    <ThemeProvider>
+      <ConvexProvider client={convex}>
+        <NavigationBar style="inverted" />
         <Stack
           screenOptions={{
             headerShown: false,
@@ -18,8 +28,8 @@ function RootLayout() {
         >
           <Stack.Screen name="(tabs)" />
         </Stack>
-      </ThemeProvider>
-    </ConvexProvider>
+      </ConvexProvider>
+    </ThemeProvider>
   );
 }
 

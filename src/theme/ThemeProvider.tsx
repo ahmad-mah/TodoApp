@@ -13,23 +13,29 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setThemeMode] = useState(ThemeMode.LIGHT);
+  const [mode, setThemeMode] = useState<ThemeMode | null>(null);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const loadThemeFromStorage = async () => {
       const storedMode = await Storage.getThemeMode();
       if (storedMode) {
         setThemeMode(storedMode);
+      } else {
+        setThemeMode(ThemeMode.LIGHT);
       }
+      setReady(true);
     };
 
     loadThemeFromStorage();
   }, []);
 
-  const setTheme = async (mode: ThemeMode) => {
-    setThemeMode(mode);
-    await Storage.setThemeMode(mode);
+  const setTheme = async (m: ThemeMode) => {
+    setThemeMode(m);
+    await Storage.setThemeMode(m);
   };
+
+  if (!ready || mode === null) return null;
 
   return (
     <ThemeContext.Provider value={{ mode, setTheme, colors: Themes[mode] }}>
