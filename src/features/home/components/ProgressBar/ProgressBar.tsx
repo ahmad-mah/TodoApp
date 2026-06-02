@@ -1,16 +1,16 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect } from 'react';
 import { Text, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
   Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
 } from 'react-native-reanimated';
 
 import useTheme from '@/theme/useTheme';
-import createProgressBarStyles from './ProgressBar.styles';
 import { useCompletedTodos, useTodos } from '../../api/useTodos';
+import createProgressBarStyles from './ProgressBar.styles';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
 

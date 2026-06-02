@@ -59,6 +59,25 @@ const createHomeListStyles = (colors: ColorScheme) =>
       justifyContent: 'center',
       alignItems: 'center',
     },
+
+    listItemEditContent: {
+      flexShrink: 1,
+      gap: 20,
+    },
+    listItemEditTextInput: {
+      backgroundColor: colors.bg,
+      borderRadius: 12,
+      borderColor: colors.border,
+      borderWidth: 2,
+      padding: 12,
+      flex: 1,
+      fontSize: 16,
+      color: colors.text,
+    },
+    listItemEditContentAction: {
+      flexDirection: 'row',
+      gap: 16,
+    },
   });
 
 export default createHomeListStyles;

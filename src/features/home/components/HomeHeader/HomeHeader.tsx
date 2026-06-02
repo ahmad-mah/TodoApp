@@ -1,9 +1,8 @@
-import BubbleIcon from '@/shared/components/ui/BubbleIcon';
+import BubbleIcon from '@/shared/components/BubbleIcon';
 import useTheme from '@/theme/useTheme';
 import { Text, View } from 'react-native';
+import { useCompletedTodos, useTodos } from '../../api/useTodos';
 import createHomeHeaderStyles from './HomeHeader.styles';
-import { useAddTodo, useCompletedTodos, useTodos } from '../../api/useTodos';
-import { getTodos } from '../../../../../convex/todos';
 
 const HomeHeader = () => {
   const { colors } = useTheme();
@@ -11,7 +10,7 @@ const HomeHeader = () => {
 
   const completedTodosCount = useCompletedTodos()?.length ?? 0;
   const getTodoCount = useTodos()?.length ?? 0;
-  
+
   return (
     <View style={styles.headerContainer}>
       <BubbleIcon name="flash-outline" />

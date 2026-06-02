@@ -7,9 +7,10 @@ import useTheme from '@/theme/useTheme';
 type props = {
   color: string;
   iconName: string;
+  onPress?: () => void;
 };
 
-const HomeListItemIcon = ({ color, iconName }: props) => {
+const HomeListItemIcon = ({ color, iconName, onPress }: props) => {
   const { colors } = useTheme();
   const styles = createStyle(colors);
 
@@ -17,6 +18,7 @@ const HomeListItemIcon = ({ color, iconName }: props) => {
     <TouchableOpacity
       activeOpacity={0.7}
       style={{ ...styles.iconContainer, backgroundColor: color }}
+      onPress={onPress}
     >
       <Ionicons name={iconName as any} style={styles.icon} />
     </TouchableOpacity>

@@ -1,10 +1,10 @@
-import { View, TextInput, TouchableOpacity } from 'react-native';
 import useTheme from '@/theme/useTheme';
-import createHomeInputStyles from './HomeInput.styles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useAddTodo } from '../../api/useTodos';
 import { useState } from 'react';
+import { TextInput, TouchableOpacity, View } from 'react-native';
+import { useAddTodo } from '../../api/useTodos';
+import createHomeInputStyles from './HomeInput.styles';
 
 const HomeInput = () => {
   const { colors } = useTheme();
