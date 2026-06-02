@@ -1,8 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import React from 'react';
-import { ColorScheme } from '@/theme/types';
-import { Ionicons } from '@expo/vector-icons';
-import useTheme from '@/theme/useTheme';
+import IconButton from '@/shared/components/IconButton';
 
 type props = {
   color: string;
@@ -11,33 +7,7 @@ type props = {
 };
 
 const HomeListItemIcon = ({ color, iconName, onPress }: props) => {
-  const { colors } = useTheme();
-  const styles = createStyle(colors);
-
-  return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      style={{ ...styles.iconContainer, backgroundColor: color }}
-      onPress={onPress}
-    >
-      <Ionicons name={iconName as any} style={styles.icon} />
-    </TouchableOpacity>
-  );
+  return <IconButton variant="icon" iconName={iconName} color={color} onPress={onPress} />;
 };
 
 export default HomeListItemIcon;
-
-const createStyle = (colors: ColorScheme) =>
-  StyleSheet.create({
-    iconContainer: {
-      height: 38,
-      width: 38,
-      borderRadius: 26,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    icon: {
-      color: colors.text,
-      fontSize: 16,
-    },
-  });

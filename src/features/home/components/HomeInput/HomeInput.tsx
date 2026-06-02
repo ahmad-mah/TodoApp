@@ -1,3 +1,4 @@
+import { isEmpty } from '@/shared/utils/validation';
 import useTheme from '@/theme/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -47,5 +48,3 @@ const HomeInput = () => {
 };
 
 export default HomeInput;
-
-const isEmpty = (str: string) => str.trim() === '';

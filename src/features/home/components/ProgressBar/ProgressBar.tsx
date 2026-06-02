@@ -9,7 +9,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import useTheme from '@/theme/useTheme';
-import { useCompletedTodos, useTodos } from '../../api/useTodos';
+import useTodoStats from '../../hooks/useTodoStats';
 import createProgressBarStyles from './ProgressBar.styles';
 
 const AnimatedLinearGradient = Animated.createAnimatedComponent(LinearGradient);
@@ -18,14 +18,11 @@ const ProgressBar = () => {
   const { colors } = useTheme();
   const styles = createProgressBarStyles(colors);
 
-  const todos = useTodos();
-
-  const totalTodosCount = todos?.length ?? 0;
-
-  const completedTodosCount = useCompletedTodos()?.length ?? 0;
-
-  const progressPercentage =
-    totalTodosCount > 0 ? (completedTodosCount / totalTodosCount) * 100 : 0;
+  const {
+    total: totalTodosCount,
+    completed: completedTodosCount,
+    percentage: progressPercentage,
+  } = useTodoStats();
 
   const progress = useSharedValue(0);
 

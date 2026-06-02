@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeHeader from '../components/HomeHeader/HomeHeader';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
-import createHomeStyles from './HomeScreen.styles';
 import HomeInput from '../components/HomeInput/HomeInput';
 import HomeList from '../components/HomeList/HomeList';
+import { ColorScheme } from '@/theme/types';
 
 const HomeScreen = () => {
   const { colors } = useTheme();
@@ -22,4 +22,12 @@ const HomeScreen = () => {
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({});
+const createHomeStyles = (colors: ColorScheme) =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      paddingHorizontal: 16,
+      paddingTop: 20,
+      alignItems: 'stretch',
+    },
+  });

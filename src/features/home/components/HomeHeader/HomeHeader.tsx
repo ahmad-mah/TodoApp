@@ -1,15 +1,16 @@
 import BubbleIcon from '@/shared/components/BubbleIcon';
 import useTheme from '@/theme/useTheme';
 import { Text, View } from 'react-native';
-import { useCompletedTodos, useTodos } from '../../api/useTodos';
+import useTodoStats from '../../hooks/useTodoStats';
 import createHomeHeaderStyles from './HomeHeader.styles';
 
 const HomeHeader = () => {
   const { colors } = useTheme();
   const styles = createHomeHeaderStyles(colors);
 
-  const completedTodosCount = useCompletedTodos()?.length ?? 0;
-  const getTodoCount = useTodos()?.length ?? 0;
+  const { completed, total } = useTodoStats();
+  const completedTodosCount = completed;
+  const getTodoCount = total;
 
   return (
     <View style={styles.headerContainer}>
