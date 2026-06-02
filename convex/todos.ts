@@ -4,7 +4,19 @@ import { v } from 'convex/values';
 const getTodos = query({
   args: {},
   async handler(ctx) {
-    return await ctx.db.query('todos').withIndex('by_status_and_time').order('asc').collect();
+    const activeTodos = await ctx.db
+      .query('todos')
+      .withIndex('by_status_and_time', (q) => q.eq('isCompleted', false))
+      .order('desc')
+      .collect();
+
+    const completedTodos = await ctx.db
+      .query('todos')
+      .withIndex('by_status_and_time', (q) => q.eq('isCompleted', true))
+      .order('desc')
+      .collect();
+
+    return [...activeTodos, ...completedTodos];
   },
 });
 
