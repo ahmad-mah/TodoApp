@@ -7,10 +7,11 @@ export default function useTodoStats() {
 
   const total = todos?.length ?? 0;
   const completedCount = completed?.length ?? 0;
+  const active = total - completedCount;
   const percentage = total > 0 ? (completedCount / total) * 100 : 0;
 
   return useMemo(
-    () => ({ total, completed: completedCount, percentage }),
-    [todos?.length, completed?.length]
+    () => ({ total, completed: completedCount, percentage, active }),
+    [todos?.length, completed?.length, active]
   );
 }

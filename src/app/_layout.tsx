@@ -5,6 +5,7 @@ import { ConvexProvider, ConvexReactClient } from 'convex/react';
 import { NavigationBar } from 'expo-navigation-bar';
 import { Stack } from 'expo-router';
 
+
 const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!);
 
 function RootLayout() {
@@ -15,6 +16,7 @@ function RootLayout() {
   if (!loaded) {
     return null; // or splash screen
   }
+
 
   return (
     <ThemeProvider>
