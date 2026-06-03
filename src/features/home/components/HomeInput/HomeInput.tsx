@@ -3,7 +3,7 @@ import useTheme from '@/theme/useTheme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import { TextInput, TouchableOpacity, View } from 'react-native';
+import { Keyboard, TextInput, TouchableOpacity, View } from 'react-native';
 import { useAddTodo } from '../../api/useTodos';
 import createHomeInputStyles from './HomeInput.styles';
 
@@ -15,6 +15,7 @@ const HomeInput = () => {
 
   const addTodo = useAddTodo();
   const handleAddTodo = () => {
+    Keyboard.dismiss();
     if (isEmpty(text)) return;
     addTodo({ text });
     setText('');
