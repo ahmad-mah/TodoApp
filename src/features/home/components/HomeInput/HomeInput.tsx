@@ -27,7 +27,7 @@ const HomeInput = () => {
       <TextInput
         style={styles.input}
         placeholder="What needs to be done?"
-        placeholderTextColor={colors.textMuted}
+        placeholderTextColor={'#bfbbbb'}
         value={text}
         onChangeText={setText}
       />

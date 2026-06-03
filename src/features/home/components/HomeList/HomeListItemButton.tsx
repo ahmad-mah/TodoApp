@@ -1,4 +1,5 @@
 import IconButton from '@/shared/components/IconButton';
+import { Keyboard } from 'react-native';
 
 type props = {
   text: string;
@@ -14,7 +15,10 @@ const HomeListItemButton = ({ color, iconName, onPress, text }: props) => {
       iconName={iconName}
       label={text}
       gradientColors={color}
-      onPress={onPress}
+      onPress={() => {
+        onPress?.();
+        Keyboard.dismiss();
+      }}
     />
   );
 };

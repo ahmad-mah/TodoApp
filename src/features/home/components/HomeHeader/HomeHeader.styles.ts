@@ -19,7 +19,7 @@ const createHomeHeaderStyles = (colors: ColorScheme) =>
       fontWeight: '700',
     },
     headerSubtitle: {
-      color: colors.textMuted,
+      color: '#999898',
       fontSize: 17,
       fontWeight: '500',
     },

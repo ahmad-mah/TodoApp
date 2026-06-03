@@ -9,7 +9,7 @@ const SettingsHeader = () => {
 
   return (
     <View style={styles.headerContainer}>
-      <BubbleIcon name="settings-outline" />
+      <BubbleIcon name="settings" />
 
       <View style={styles.headerTextContainer}>
         <Text style={styles.headerTitle}>Settigns</Text>

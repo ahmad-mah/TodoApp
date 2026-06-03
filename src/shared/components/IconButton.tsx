@@ -67,12 +67,12 @@ const createStyles = (colors: any) =>
       alignItems: 'center',
     },
     icon: {
-      color: colors.text,
+      color: '#fff',
       fontSize: 16,
     },
     label: {
       fontSize: 15,
       fontWeight: '600',
-      color: colors.text,
+      color: '#fff',
     },
   });

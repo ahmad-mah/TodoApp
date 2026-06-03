@@ -2,20 +2,21 @@ import { ColorScheme } from '@/theme/types';
 import useTheme from '@/theme/useTheme';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
 
 type GradientCardProps = {
   title: string;
   children: ReactNode;
+  titleStyle?: StyleProp<TextStyle>;
 };
 
-const GradientCard = ({ title, children }: GradientCardProps) => {
+const GradientCard = ({ title, children, titleStyle }: GradientCardProps) => {
   const { colors } = useTheme();
   const styles = createGradientCardStyle(colors);
 
   return (
     <LinearGradient colors={colors.gradients.surface} style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={[styles.title, titleStyle]}>{title}</Text>
       <View style={styles.contentContainer}>{children}</View>
     </LinearGradient>
   );
@@ -24,9 +25,8 @@ const GradientCard = ({ title, children }: GradientCardProps) => {
 const createGradientCardStyle = (colors: ColorScheme) =>
   StyleSheet.create({
     container: {
-      marginTop: 30,
       padding: 22,
-      borderRadius: 12,
+      borderRadius: 16,
       gap: 20,
       alignItems: 'stretch',
     },

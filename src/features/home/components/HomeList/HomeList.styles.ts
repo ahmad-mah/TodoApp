@@ -29,8 +29,8 @@ const createHomeListStyles = (colors: ColorScheme) =>
       borderRadius: 16,
     },
     listItemCheckIcon: {
-      color: colors.text,
-      fontSize: 20,
+      color: '#fff',
+      fontSize: 16,
       fontWeight: '700',
     },
     listItemCheckFilled: {

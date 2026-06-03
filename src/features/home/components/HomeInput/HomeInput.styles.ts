@@ -31,12 +31,12 @@ const createHomeInputStyles = (colors: ColorScheme) =>
     },
     buttonIcon: {
       fontSize: 20,
-      color: colors.text,
+      color: '#fff',
     },
-  
+
     buttonDisabledIcon: {
       fontSize: 20,
-      color: colors.textMuted,
+      color: '#fff',
     },
   });
 

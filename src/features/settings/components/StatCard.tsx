@@ -41,15 +41,15 @@ const createStatCardStyle = (colors: ColorScheme) =>
       elevation: 10,
     },
     iconContainer: {
-      height: 50,
-      width: 50,
+      height: 45,
+      width: 45,
       borderRadius: 40,
       padding: 12,
       justifyContent: 'center',
       alignItems: 'center',
     },
     icon: {
-      color: colors.text,
+      color: '#fff',
       fontSize: 22,
     },
     TextContainer: {},

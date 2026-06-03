@@ -37,7 +37,7 @@ const createEmptyStateStyles = (colors: ColorScheme) =>
       borderRadius: 70,
     },
     icon: {
-      color: colors.textMuted,
+      color: '#fff',
       fontSize: 60,
     },
     title: {

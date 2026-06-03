@@ -1,4 +1,4 @@
-import { TextInput, View } from 'react-native';
+import { Keyboard, TextInput, View } from 'react-native';
 import HomeListItemButton from './HomeListItemButton';
 
 type Props = {
@@ -26,6 +26,7 @@ export default function HomeListItemEditForm({
         placeholder="Edit todo"
         style={styles.listItemEditTextInput}
         placeholderTextColor={colors.text}
+        autoFocus
       />
       <View style={styles.listItemEditContentAction}>
         <HomeListItemButton
